@@ -1,5 +1,5 @@
-name: format and test files
-run-name: GitHub Action
+name: format files
+run-name: format
 on: [push]
 jobs:
   Explore-GitHub-Actions:
