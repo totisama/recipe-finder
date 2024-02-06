@@ -8,7 +8,7 @@ export interface Recipe {
   idMeal: string
 }
 
-type StrIngredient = `strIngredient${number}`
+export type StrIngredient = `strIngredient${number}`
 type StrMeasure = `strMeasure${number}`
 
 export interface FullRecipe extends Recipe {
@@ -24,4 +24,9 @@ export interface FullRecipe extends Recipe {
   dateModified: string
   [key: StrIngredient]: string
   [key: StrMeasure]: string
+}
+
+export interface IngredientImageName {
+  image: string
+  name: string
 }
