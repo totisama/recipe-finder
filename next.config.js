@@ -1,5 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   images: {
     remotePatterns: [
       {
@@ -8,8 +7,12 @@ const nextConfig = {
         port: '',
         pathname: '/images/media/meals/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.themealdb.com',
+        port: '',
+        pathname: '/images/ingredients/**',
+      },
     ],
   },
 }
-
-export default nextConfig
