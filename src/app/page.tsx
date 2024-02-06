@@ -19,7 +19,7 @@ export default async function Home() {
             width={700}
             height={700}
           />
-          <Link href={`/${meal.idMeal}`}>{meal.strMeal}</Link>
+          <Link href={`/recipe/${meal.idMeal}`}>{meal.strMeal}</Link>
         </article>
       ))}
     </section>
