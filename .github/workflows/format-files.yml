@@ -1,0 +1,10 @@
+name: format files
+run-name: GitHub Action
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run lint
+      - run: npm run format
