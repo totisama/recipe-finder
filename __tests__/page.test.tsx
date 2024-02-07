@@ -17,6 +17,11 @@ describe('Page', () => {
   it('should change the value of the select option', async () => {
     render(<Select />)
 
+    const beforeEvent: HTMLOptionElement = screen.getByTestId(
+      'select-option-American'
+    )
+    expect(beforeEvent.selected).toBe(false)
+
     await act(() =>
       userEvent.selectOptions(
         screen.getByRole('combobox'),
@@ -24,10 +29,10 @@ describe('Page', () => {
       )
     )
 
-    const option: HTMLOptionElement = screen.getByTestId(
+    const afterEvent: HTMLOptionElement = screen.getByTestId(
       'select-option-American'
     )
 
-    expect(option.selected).toBe(true)
+    expect(afterEvent.selected).toBe(true)
   })
 })
