@@ -1,5 +1,4 @@
 import api from '@/api'
-import Image from 'next/image'
 import { formatInstructions, getMainIngredients } from '../../../utils'
 
 export default async function RecipePage({
@@ -11,44 +10,49 @@ export default async function RecipePage({
   const ingredients = getMainIngredients(meal)
 
   return (
-    <section className='flex w-full flex-col items-center justify-start gap-y-5'>
-      <div className='flex w-full flex-col md:flex-row md:justify-center md:gap-x-36'>
-        <div className='flex flex-col gap-y-5 md:w-2/5'>
-          <h2 className='text-3xl font-bold text-white'>{meal.strMeal}</h2>
-          <Image
-            alt={meal.strMeal}
-            src={meal.strMealThumb}
-            className='h-[300px] w-[300px] lg:h-[500px] lg:w-[500px]'
-            width={700}
-            height={700}
-          />
-          <div className='flex gap-x-5'>
-            {meal.strTags.split(',').map((tag) => (
-              <span
-                className='rounded-lg bg-slate-100 px-2 py-1 text-black'
-                key={tag}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+    <section className='mt-12 flex w-full flex-col items-center justify-start gap-y-5'>
+      <div className='flex w-full flex-col'>
+        <div className='flex w-full gap-y-5'>
+          <h2 className='w-2/5 text-3xl font-bold text-white'>
+            {meal.strMeal}
+          </h2>
+          <h2 className='ml-16 w-3/5 text-xl font-medium text-white'>
+            Ingredients
+          </h2>
         </div>
-        <div className='align-center mt-12 md:w-3/5'>
-          <h2 className='text-xl font-medium text-white'>Ingredients</h2>
-          <div className='mt-10 flex flex-row flex-wrap gap-y-10'>
+        <div className='align-center mt-5 flex'>
+          <div className='w-2/5'>
+            <img
+              alt={meal.strMeal}
+              src={meal.strMealThumb}
+              className='h-[200px] w-[200px] lg:h-[500px] lg:w-[500px]'
+            />
+            <div className='mt-4 flex flex-wrap gap-2 md:flex-row'>
+              {meal.strTags.split(',').map((tag) => (
+                <span
+                  className='w-fit rounded-lg bg-slate-100 px-2 py-1 text-black'
+                  key={tag}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className='flex w-3/5 flex-row flex-wrap justify-center gap-y-10'>
             {ingredients.map((ingredient) => (
               <div
-                key={ingredient.name}
+                key={ingredient.name + ingredient.measure}
                 className='flex flex-col items-center justify-center gap-y-2'
               >
-                <Image
+                <img
                   alt={ingredient.name}
                   className='h-32 w-32 md:h-52 md:w-52'
                   src={ingredient.image}
-                  width={700}
-                  height={700}
                 />
-                <span className='text-[#d57d1f]'>{ingredient.name}</span>
+                <span className='text-[#d57d1f]'>
+                  {ingredient.measure}
+                  {ingredient.name}
+                </span>
               </div>
             ))}
           </div>
