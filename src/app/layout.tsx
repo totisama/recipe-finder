@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} bg-[#2d2013]`}>
-        <main className='mb-10 flex max-h-full min-h-screen flex-col items-center gap-y-10 px-24 py-10'>
+        <main className='mx-auto mb-10 flex max-w-6xl flex-col items-center justify-center px-10 py-10 lg:px-0'>
           <Link href={'/'}>
-            <h1 className='text-6xl text-white'>Repice Finder</h1>
+            <h1 className='text-6xl text-white'>Recipe Finder</h1>
           </Link>
           {children}
         </main>
