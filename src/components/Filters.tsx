@@ -7,7 +7,7 @@ import { type ChangeEvent } from 'react'
 export default function Filters() {
   const searchParams = useSearchParams()
   const pathname = usePathname()
-  const { replace } = useRouter()
+  const router = useRouter()
 
   const changeArea = (event: ChangeEvent<HTMLSelectElement>) => {
     const params = new URLSearchParams(searchParams)
@@ -19,7 +19,7 @@ export default function Filters() {
       params.delete(area)
     }
 
-    replace(`${pathname}?${params.toString()}`)
+    router.replace(`${pathname}?${params.toString()}`)
   }
 
   return (
