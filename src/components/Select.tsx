@@ -11,24 +11,30 @@ export default function Select() {
     const params = new URLSearchParams(searchParams)
     const area = event.target.value
 
-    if (area !== null) {
+    if (area !== null && area !== '') {
       params.set('area', area)
     } else {
-      params.delete(area)
+      params.delete('area')
     }
 
     router.replace(`${pathname}?${params.toString()}`)
   }
 
   return (
-    <>
-      <label htmlFor='area'>Select an Area</label>
+    <div className='flex items-center gap-4'>
+      <label
+        className='text-xl text-white'
+        htmlFor='area'
+      >
+        Select an area
+      </label>
       <select
         id='area'
         className='rounded-md px-4 py-2'
         onChange={(e) => {
           changeArea(e)
         }}
+        defaultValue={searchParams.get('area')?.toString()}
       >
         {AREAS.map((area) => (
           <option
@@ -39,6 +45,6 @@ export default function Select() {
           </option>
         ))}
       </select>
-    </>
+    </div>
   )
 }
