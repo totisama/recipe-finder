@@ -1,20 +1,24 @@
-import { MOCK_MEALS } from '@/const'
+import { type Meals } from '@/types'
+import Link from 'next/link'
 
-export default function Home() {
+export default function HomePage({ meals }: { meals: Meals }) {
   return (
-    <section className='flex w-full flex-wrap gap-x-9 gap-y-4'>
-      {MOCK_MEALS.meals.map((meal) => (
-        <article
-          data-testid='meal'
+    <section className='mt-4 flex w-full flex-wrap justify-center gap-3'>
+      {meals.meals.map((meal) => (
+        <Link
           key={meal.idMeal}
-          className='flex flex-col items-center justify-center rounded-md bg-slate-50 p-3'
+          className='flex flex-col items-center p-3'
+          href={`/recipe/${meal.idMeal}`}
         >
           <img
             className='h-52 w-52'
             src={meal.strMealThumb}
             alt='Meal image'
           />
-        </article>
+          <span className='text-sm text-[#d57d1f] md:text-lg'>
+            {meal.strMeal}
+          </span>
+        </Link>
       ))}
     </section>
   )

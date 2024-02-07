@@ -1,10 +1,11 @@
-import Home from '@/components/Home.tsx'
+import HomePage from '@/components/Home.tsx'
+import { MOCK_MEALS } from '@/const'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 describe('Page', () => {
   it('Renders some Meals', () => {
-    render(<Home />)
+    render(<HomePage meals={MOCK_MEALS} />)
 
     const meals = screen.getAllByTestId('meal')
 
