@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import api from '@/api'
 
@@ -6,21 +5,22 @@ export default async function Home() {
   const meals = await api.getByArea('Canadian')
 
   return (
-    <section className='flex w-full flex-wrap gap-x-9 gap-y-4'>
+    <section className='mt-12 flex w-full flex-wrap justify-center gap-3'>
       {meals.meals.map((meal) => (
-        <article
+        <Link
           key={meal.idMeal}
-          className='flex flex-col items-center justify-center rounded-md bg-slate-50 p-3'
+          className='flex flex-col items-center p-3'
+          href={`/recipe/${meal.idMeal}`}
         >
-          <Image
+          <img
             className='h-52 w-52'
             src={meal.strMealThumb}
             alt='Meal image'
-            width={700}
-            height={700}
           />
-          <Link href={`/recipe/${meal.idMeal}`}>{meal.strMeal}</Link>
-        </article>
+          <span className='text-sm text-[#d57d1f] md:text-lg'>
+            {meal.strMeal}
+          </span>
+        </Link>
       ))}
     </section>
   )
