@@ -6,6 +6,7 @@ export default function HomePage({ meals }: { meals: Meals }) {
     <section className='mt-4 flex w-full flex-wrap justify-center gap-3'>
       {meals.meals.map((meal) => (
         <Link
+          data-testid='meal'
           key={meal.idMeal}
           className='flex flex-col items-center p-3'
           href={`/recipe/${meal.idMeal}`}
