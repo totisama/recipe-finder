@@ -9,7 +9,7 @@ export interface Recipe {
 }
 
 export type StrIngredient = `strIngredient${number}`
-type StrMeasure = `strMeasure${number}`
+export type StrMeasure = `strMeasure${number}`
 
 export interface FullRecipe extends Recipe {
   strDrinkAlternate: string
@@ -29,4 +29,5 @@ export interface FullRecipe extends Recipe {
 export interface IngredientImageName {
   image: string
   name: string
+  measure: string
 }
