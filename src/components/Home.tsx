@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { MOCK_MEALS } from '@/const'
 
 export default function Home() {
@@ -10,12 +9,10 @@ export default function Home() {
           key={meal.idMeal}
           className='flex flex-col items-center justify-center rounded-md bg-slate-50 p-3'
         >
-          <Image
+          <img
             className='h-52 w-52'
             src={meal.strMealThumb}
             alt='Meal image'
-            width={700}
-            height={700}
           />
         </article>
       ))}
