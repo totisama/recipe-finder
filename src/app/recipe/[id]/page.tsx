@@ -1,5 +1,10 @@
 import api from '@/api'
-import { formatInstructions, getMainIngredients } from '../../../utils'
+import {
+  formatIngredientName,
+  formatInstructions,
+  getMainIngredients,
+} from '../../../utils'
+import Link from 'next/link'
 
 export default async function RecipePage({
   params: { id },
@@ -28,7 +33,7 @@ export default async function RecipePage({
               className='h-[200px] w-[200px] lg:h-[500px] lg:w-[500px]'
             />
             <div className='mt-4 flex flex-wrap gap-2 md:flex-row'>
-              {meal.strTags.split(',').map((tag) => (
+              {meal.strTags?.split(',').map((tag) => (
                 <span
                   className='w-fit rounded-lg bg-slate-100 px-2 py-1 text-black'
                   key={tag}
@@ -38,11 +43,12 @@ export default async function RecipePage({
               ))}
             </div>
           </div>
-          <div className='flex w-3/5 flex-row flex-wrap justify-center gap-y-10'>
+          <div className='ml-10 flex w-3/5 flex-row flex-wrap justify-start gap-y-5'>
             {ingredients.map((ingredient) => (
-              <div
+              <Link
                 key={ingredient.name + ingredient.measure}
-                className='flex flex-col items-center justify-center gap-y-2'
+                className='flex w-52 flex-col items-center justify-center gap-y-2 text-center'
+                href={`/search/ingredient/${formatIngredientName(ingredient.name)}`}
               >
                 <img
                   alt={ingredient.name}
@@ -53,7 +59,7 @@ export default async function RecipePage({
                   {ingredient.measure}
                   {ingredient.name}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

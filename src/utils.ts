@@ -12,7 +12,7 @@ export function getMainIngredients(recipe: FullRecipe): IngredientImageName[] {
     const key = INGREDIENTS_KEY[index]
     const ingredientKey = recipe[key]
 
-    if (ingredientKey !== '') {
+    if (ingredientKey !== '' && ingredientKey !== null) {
       const ingredientImage = `${API_URL_IMAGES}/${ingredientKey}.png`
       const measure = recipe[`strMeasure${index + 1}`] as StrMeasure
 
@@ -31,4 +31,8 @@ export function formatInstructions(instructions: string) {
   const instructionsFormatted = instructions.split('.')
 
   return instructionsFormatted
+}
+
+export function formatIngredientName(name: string) {
+  return name.replace(' ', '_')
 }

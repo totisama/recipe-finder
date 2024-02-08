@@ -22,6 +22,16 @@ const api = {
 
     return meals
   },
+  getByIngredient: async (ingredient: string): Promise<Meals> => {
+    const res = await fetch(`${API_URL_JSON}/filter.php?i=${ingredient}`)
+    const meals = await res.json()
+
+    if (meals.meals === undefined || meals.meals === null) {
+      throw new Error(`meals with ingredient ${ingredient} not found`)
+    }
+
+    return meals
+  },
   getById: async (id: FullRecipe['idMeal']): Promise<FullRecipe> => {
     const res = await fetch(`${API_URL_JSON}/lookup.php?i=${id}`)
     const meal = await res.json()
