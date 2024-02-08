@@ -1,4 +1,4 @@
-import HomePage from '@/components/Home.tsx'
+import HomePage from '@/components/HomePage'
 import { MOCK_MEALS } from '@/const'
 import { render, screen } from '@testing-library/react'
 import Select from '@/components/Select'
@@ -15,19 +15,19 @@ describe('Page', () => {
   })
 
   it('should change the value of the select option', async () => {
-    render(<Select changeArea={() => {}} />)
+    render(<Select area='American' />)
 
     const beforeEvent: HTMLOptionElement = screen.getByTestId(
       'select-option-American'
     )
     expect(beforeEvent.selected).toBe(false)
 
-    await act(() =>
-      userEvent.selectOptions(
+    await act(async () => {
+      await userEvent.selectOptions(
         screen.getByRole('combobox'),
         screen.getByTestId('select-option-American')
       )
-    )
+    })
 
     const afterEvent: HTMLOptionElement = screen.getByTestId(
       'select-option-American'

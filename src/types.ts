@@ -31,3 +31,8 @@ export interface IngredientImageName {
   name: string
   measure: string
 }
+
+export interface ShownFiltersType {
+  select: boolean
+  letters: boolean
+}

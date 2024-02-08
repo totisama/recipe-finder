@@ -1,0 +1,29 @@
+import { LETTERS } from '@/const'
+
+interface LetterProps {
+  changeLetter: (letter: string) => void
+}
+
+export default function Letters({ changeLetter }: LetterProps) {
+  return (
+    <div className='flex'>
+      {LETTERS.map((letter, index) => (
+        <div
+          className='ml-2 flex gap-2'
+          key={index}
+        >
+          <span
+            className='text-bold cursor-pointer text-[#d57d1f]'
+            key={letter}
+            onClick={() => {
+              changeLetter(letter)
+            }}
+          >
+            {letter}
+          </span>
+          {index < LETTERS.length - 1 && <span className='text-white'>/</span>}
+        </div>
+      ))}
+    </div>
+  )
+}
