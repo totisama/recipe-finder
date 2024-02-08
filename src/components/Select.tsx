@@ -1,27 +1,11 @@
-'use client'
-
 import { AREAS } from '@/const'
-// import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-// import { type ChangeEvent } from 'react'
+import { type ChangeEvent } from 'react'
 
-export default function Select() {
-  // const searchParams = useSearchParams()
-  // const pathname = usePathname()
-  // const router = useRouter()
+interface SelectProps {
+  changeArea: (event: ChangeEvent<HTMLSelectElement>) => void
+}
 
-  // const changeArea = (event: ChangeEvent<HTMLSelectElement>) => {
-  //   const params = new URLSearchParams(searchParams)
-  //   const area = event.target.value
-
-  //   if (area !== null && area !== '') {
-  //     params.set('area', area)
-  //   } else {
-  //     params.delete('area')
-  //   }
-
-  //   router.replace(`${pathname}?${params.toString()}`)
-  // }
-
+export default function Select({ changeArea }: SelectProps) {
   return (
     <div className='flex items-center gap-4'>
       <label
@@ -35,6 +19,9 @@ export default function Select() {
         data-testid='select'
         id='area'
         className='rounded-md px-4 py-2'
+        onChange={(e) => {
+          changeArea(e)
+        }}
       >
         {AREAS.map((area) => (
           <option

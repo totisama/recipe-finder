@@ -15,7 +15,7 @@ describe('Page', () => {
   })
 
   it('should change the value of the select option', async () => {
-    render(<Select />)
+    render(<Select changeArea={() => {}} />)
 
     const beforeEvent: HTMLOptionElement = screen.getByTestId(
       'select-option-American'
