@@ -1,5 +1,5 @@
 import api from '@/api'
-import HomePage from '@/components/HomePage'
+import MealsList from '@/components/MealsList'
 
 export default async function Area({
   params: { ingredient },
@@ -9,8 +9,9 @@ export default async function Area({
   const meals = await api.getByIngredient(ingredient)
 
   return (
-    <div className='flex flex-col'>
-      <HomePage meals={meals} />
+    <div className='mt-5 flex flex-col items-center'>
+      <h2 className='text-bold text-3xl text-[#d57d1f]'>{ingredient}</h2>
+      <MealsList meals={meals} />
     </div>
   )
 }

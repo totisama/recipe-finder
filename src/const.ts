@@ -28,7 +28,6 @@ export const INGREDIENTS_KEY: StrIngredient[] = [
 ]
 
 export const AREAS = [
-  '',
   'American',
   'British',
   'Canadian',
@@ -57,6 +56,23 @@ export const AREAS = [
   'Turkish',
   'Unknown',
   'Vietnamese',
+]
+
+export const CATEGORIES = [
+  'Beef',
+  'Breakfast',
+  'Chicken',
+  'Dessert',
+  'Goat',
+  'Lamb',
+  'Miscellaneous',
+  'Pasta',
+  'Pork',
+  'Seafood',
+  'Side',
+  'Starter',
+  'Vegan',
+  'Vegetarian',
 ]
 
 export const MOCK_MEALS = {

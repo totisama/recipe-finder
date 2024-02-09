@@ -1,5 +1,5 @@
 import api from '@/api'
-import HomePage from '@/components/HomePage'
+import MealsList from '@/components/MealsList'
 import Filters from '@/components/Filters'
 
 export default async function Letter({
@@ -13,9 +13,9 @@ export default async function Letter({
     <div className='mt-12 flex flex-col items-center justify-center'>
       <Filters
         area={''}
-        shownFilters={{ select: false, letters: true }}
+        shownFilters={{ area: false, letters: true, category: false }}
       />
-      <HomePage meals={meals} />
+      <MealsList meals={meals} />
     </div>
   )
 }

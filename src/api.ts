@@ -12,6 +12,16 @@ const api = {
 
     return meals
   },
+  getByCategory: async (category: string): Promise<Meals> => {
+    const res = await fetch(`${API_URL_JSON}/filter.php?c=${category}`)
+    const meals = await res.json()
+
+    if (meals.meals === undefined || meals.meals === null) {
+      throw new Error(`meals with category ${category} not found`)
+    }
+
+    return meals
+  },
   getByLetter: async (letter: string): Promise<Meals> => {
     const res = await fetch(`${API_URL_JSON}/search.php?f=${letter}`)
     const meals = await res.json()

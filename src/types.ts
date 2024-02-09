@@ -33,6 +33,7 @@ export interface IngredientImageName {
 }
 
 export interface ShownFiltersType {
-  select: boolean
+  area: boolean
+  category: boolean
   letters: boolean
 }

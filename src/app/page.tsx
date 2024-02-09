@@ -1,6 +1,6 @@
 import api from '@/api'
 import Filters from '@/components/Filters'
-import HomePage from '@/components/HomePage'
+import MealsList from '@/components/MealsList'
 
 export default async function Home() {
   const meals = await api.getByArea('American')
@@ -9,9 +9,10 @@ export default async function Home() {
     <>
       <Filters
         area={''}
-        shownFilters={{ select: true, letters: true }}
+        category={''}
+        shownFilters={{ area: true, letters: true, category: true }}
       />
-      <HomePage meals={meals} />
+      <MealsList meals={meals} />
     </>
   )
 }

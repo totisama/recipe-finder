@@ -2,18 +2,18 @@ import api from '@/api'
 import MealsList from '@/components/MealsList'
 import Filters from '@/components/Filters'
 
-export default async function Area({
-  params: { area },
+export default async function Category({
+  params: { category },
 }: {
-  params: { area: string }
+  params: { category: string }
 }) {
-  const meals = await api.getByArea(area)
+  const meals = await api.getByCategory(category)
 
   return (
     <div className='flex flex-col'>
       <Filters
-        area={area}
-        shownFilters={{ area: true, letters: false, category: false }}
+        category={category}
+        shownFilters={{ area: false, letters: false, category: true }}
       />
       <MealsList meals={meals} />
     </div>

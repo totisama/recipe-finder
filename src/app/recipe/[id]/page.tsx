@@ -20,12 +20,19 @@ export default async function RecipePage({
         <div className='flex w-full gap-y-5'>
           <h2 className='w-2/5 text-3xl font-bold text-white'>
             {meal.strMeal}
+            {' - '}
+            <Link
+              className='text-[#d57d1f] underline'
+              href={`/search/category/${meal.strCategory}`}
+            >
+              {meal.strCategory}
+            </Link>
           </h2>
-          <h2 className='ml-16 w-3/5 text-xl font-medium text-white'>
+          <h2 className='ml-16 w-3/5 text-2xl font-semibold text-white'>
             Ingredients
           </h2>
         </div>
-        <div className='align-center mt-5 flex'>
+        <div className='align-center mt-2 flex'>
           <div className='w-2/5'>
             <img
               alt={meal.strMeal}
@@ -64,9 +71,18 @@ export default async function RecipePage({
           </div>
         </div>
       </div>
-      <div className='mt-10 flex h-80 w-4/5 flex-col items-center gap-y-5'>
+      <div className='mt-10 flex w-4/5 flex-col items-center'>
         <h2 className='text-2xl font-bold text-white'>Instructions</h2>
-        <ul className='flex flex-col items-center text-center text-white'>
+        {meal.strYoutube !== null && meal.strYoutube !== '' ? (
+          <a
+            className='text-[#d57d1f] underline'
+            href={meal.strYoutube}
+            target='_blank'
+          >
+            Video tutorial
+          </a>
+        ) : null}
+        <ul className='mt-5 flex flex-col items-center text-center text-white'>
           {formatInstructions(meal.strInstructions).map(
             (instruction, index) => (
               <li

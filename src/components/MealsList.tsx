@@ -1,14 +1,14 @@
 import { type Meals } from '@/types'
 import Link from 'next/link'
 
-export default function HomePage({ meals }: { meals: Meals }) {
+export default function MealsList({ meals }: { meals: Meals }) {
   return (
     <section className='mt-4 flex w-full flex-wrap justify-center gap-x-3 text-center'>
       {meals.meals.map((meal) => (
         <Link
           data-testid='meal'
           key={meal.idMeal}
-          className='flex flex-col items-center p-3 lg:w-60'
+          className='flex flex-col items-center lg:w-60'
           href={`/recipe/${meal.idMeal}`}
         >
           <img
