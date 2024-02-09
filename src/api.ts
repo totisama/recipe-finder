@@ -7,7 +7,7 @@ const api = {
     const meals = await res.json()
 
     if (meals.meals === undefined || meals.meals === null) {
-      throw new Error(`meals with area ${area} not found`)
+      throw new Error(`Meals with area "${area}" not found`)
     }
 
     return meals
@@ -17,7 +17,7 @@ const api = {
     const meals = await res.json()
 
     if (meals.meals === undefined || meals.meals === null) {
-      throw new Error(`meals with category ${category} not found`)
+      throw new Error(`Meals with category "${category}" not found`)
     }
 
     return meals
@@ -27,7 +27,7 @@ const api = {
     const meals = await res.json()
 
     if (meals.meals === undefined || meals.meals === null) {
-      throw new Error(`meals with letter ${letter} not found`)
+      throw new Error(`Meals with letter "${letter}" not found`)
     }
 
     return meals
@@ -37,7 +37,7 @@ const api = {
     const meals = await res.json()
 
     if (meals.meals === undefined || meals.meals === null) {
-      throw new Error(`meals with ingredient ${ingredient} not found`)
+      throw new Error(`Meals with ingredient "${ingredient}" not found`)
     }
 
     return meals
@@ -47,7 +47,7 @@ const api = {
     const meal = await res.json()
 
     if (meal.meals === undefined || meal.meals === null) {
-      throw new Error(`meal with id ${id} not found`)
+      throw new Error(`Meal not found`)
     }
 
     return meal.meals[0]
