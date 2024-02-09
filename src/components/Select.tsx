@@ -21,13 +21,13 @@ export default function Select({
     <div className='flex items-center gap-4'>
       <label
         className='text-xl text-white'
-        htmlFor='select'
+        htmlFor={`select-${value}`}
       >
         {text}
       </label>
       <select
         data-testid='select'
-        id='select'
+        id={`select-${value}`}
         className='rounded-md px-4 py-2'
         onChange={(e) => {
           onChange(e, type)
