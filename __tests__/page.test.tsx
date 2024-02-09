@@ -1,5 +1,5 @@
-import HomePage from '@/components/HomePage'
-import { MOCK_MEALS } from '@/const'
+import HomePage from '@/components/MealsList'
+import { AREAS, MOCK_MEALS } from '@/const'
 import { render, screen } from '@testing-library/react'
 import Select from '@/components/Select'
 import { userEvent } from '@testing-library/user-event'
@@ -17,8 +17,11 @@ describe('Page', () => {
   it('should change the selected value of the option', async () => {
     render(
       <Select
-        area='Canadian'
-        changeArea={() => {}}
+        value='Canadian'
+        onChange={() => {}}
+        type={'area'}
+        options={AREAS}
+        text={'Select an area:'}
       />
     )
 
