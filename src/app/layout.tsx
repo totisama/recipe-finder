@@ -20,8 +20,11 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${itim.className} bg-[#2d2013]`}>
         <main className='mx-auto mb-10 flex max-w-6xl flex-col items-center justify-center px-10 py-10 lg:px-0'>
-          <Link href={'/'}>
-            <h1 className='text-6xl text-white'>Recipe Finder</h1>
+          <Link
+            className='mb-8'
+            href={'/'}
+          >
+            <h1 className='text-6xl text-[#d57d1f]'>Recipe Finder</h1>
           </Link>
           {children}
         </main>

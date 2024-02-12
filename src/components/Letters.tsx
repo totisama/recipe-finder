@@ -21,7 +21,7 @@ export default function Letters({ changeLetter }: LetterProps) {
           >
             {letter}
           </span>
-          {index < LETTERS.length - 1 && <span className='text-white'>/</span>}
+          {index < LETTERS.length - 1 && <span className='text-black'>/</span>}
         </div>
       ))}
     </div>

@@ -44,7 +44,7 @@ export default function Filters({
   }
 
   return (
-    <section className='mb-5 mt-12 flex w-full flex-col items-center space-y-5'>
+    <section className='flex w-full flex-col items-center space-y-5'>
       <div className='flex flex-col items-start justify-start gap-y-5 md:flex-row md:gap-x-10'>
         {shownFilters.area && (
           <Select

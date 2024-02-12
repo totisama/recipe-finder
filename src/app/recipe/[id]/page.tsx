@@ -15,10 +15,10 @@ export default async function RecipePage({
   const ingredients = getMainIngredients(meal)
 
   return (
-    <section className='mt-12 flex w-full flex-col items-center justify-start gap-y-5'>
+    <section className='mt-8 flex w-full flex-col items-center justify-start gap-y-5'>
       <div className='flex w-full flex-col'>
         <div className='flex w-full gap-y-5'>
-          <h2 className='w-2/5 text-3xl font-bold text-white'>
+          <h2 className='w-2/5 text-3xl font-bold text-black'>
             {meal.strMeal}
             {' - '}
             <Link
@@ -28,7 +28,7 @@ export default async function RecipePage({
               {meal.strCategory}
             </Link>
           </h2>
-          <h2 className='ml-16 w-3/5 text-2xl font-semibold text-white'>
+          <h2 className='ml-16 w-3/5 text-2xl font-semibold text-black'>
             Ingredients
           </h2>
         </div>
@@ -42,7 +42,7 @@ export default async function RecipePage({
             <div className='mt-4 flex flex-wrap gap-2 md:flex-row'>
               {meal.strTags?.split(',').map((tag) => (
                 <span
-                  className='w-fit rounded-lg bg-slate-100 px-2 py-1 text-black'
+                  className='w-fit select-none rounded-lg border-[1px] border-[#c6c4d4] bg-[#f1f0f4] px-2 py-1 text-black'
                   key={tag}
                 >
                   {tag}
@@ -72,7 +72,7 @@ export default async function RecipePage({
         </div>
       </div>
       <div className='mt-10 flex w-4/5 flex-col items-center'>
-        <h2 className='text-2xl font-bold text-white'>Instructions</h2>
+        <h2 className='text-3xl font-bold text-black'>Instructions</h2>
         {meal.strYoutube !== null && meal.strYoutube !== '' ? (
           <a
             className='text-[#d57d1f] underline'
@@ -82,11 +82,11 @@ export default async function RecipePage({
             Video tutorial
           </a>
         ) : null}
-        <ul className='mt-5 flex flex-col items-center text-center text-white'>
+        <ul className='mt-5 flex flex-col items-center text-center text-black'>
           {formatInstructions(meal.strInstructions).map(
             (instruction, index) => (
               <li
-                className='mb-2 text-sm'
+                className='mb-2 text-base'
                 key={index}
               >
                 {instruction}

@@ -10,7 +10,7 @@ export default async function Letter({
   const meals = await api.getByLetter(letter)
 
   return (
-    <div className='mt-12 flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center'>
       <Filters
         area={''}
         shownFilters={{ area: false, letters: true, category: false }}
