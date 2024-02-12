@@ -1,8 +1,8 @@
 # Recipe Finder 🍽️
 
-This project was created for the Web and Tooling class in the Harbour.Space Master's Front-End Development program. It utilizes the [TheMealDB](https://www.themealdb.com/api.php) API to access recipes, images, and information.
+This project was created for the Web and Tooling class in the Harbour.Space Master's Front-End Development program. It utilizes the [TheMealDB](https://www.themealdb.com/api.php) API to access recipes, images, and all the different information shown.
 
-### 🧱 Getting Started
+## 🧱 Getting Started
 
 Clone the repo and enter the folder
 
@@ -35,9 +35,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-### 🏗️ Build
+## 🏗️ Build
 
 On the root of the project, run the following command:
 
@@ -45,14 +45,39 @@ On the root of the project, run the following command:
 npm run build
 ```
 
-### 🔨 Technologies
+If the commands succeds with any error, the build will go inside of the .next folder.
+
+## 📖 Storybook
+
+#### Run
+
+Run the following command:
+
+```
+npm run storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006) in your browser to see the result.
+
+#### Build
+
+Run the following command:
+
+```
+npm run build-storybook
+```
+
+If the commands succeds with any error, the build will go inside of the .storybook folder.
+
+## 🔨 Technologies
 
 - Next.js 14
 - TypeScript
 - Tailwind
 - Jest
+- Storybook
 
-### 🧪 Try it here:
+## 🧪 Try it here:
 
 https://recipe-finder-totisama.vercel.app
 

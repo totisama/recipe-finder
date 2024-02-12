@@ -11,7 +11,8 @@
     "eslint:recommended",
     "plugin:react/jsx-runtime",
     "next",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
