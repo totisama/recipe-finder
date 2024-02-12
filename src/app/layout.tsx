@@ -1,10 +1,10 @@
 import type React from 'react'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Itim } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+const itim = Itim({ subsets: ['latin'], weight: ['400'] })
 
 export const metadata: Metadata = {
   title: 'Recipe Finder',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-[#2d2013]`}>
+      <body className={`${itim.className} bg-[#2d2013]`}>
         <main className='mx-auto mb-10 flex max-w-6xl flex-col items-center justify-center px-10 py-10 lg:px-0'>
           <Link href={'/'}>
             <h1 className='text-6xl text-white'>Recipe Finder</h1>
