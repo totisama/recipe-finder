@@ -37,6 +37,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### 🏗️ Build
+
+On the root of the project, run the following command:
+
+```
+npm run build
+```
+
 ### 🔨 Technologies
 
 - Next.js 14
@@ -44,10 +52,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Tailwind
 - Jest
 
-### Try it here:
+### 🧪 Try it here:
 
 https://recipe-finder-totisama.vercel.app
 
-## License
+## 🪪 License
 
 This project is licensed with the [MIT license](LICENSE).
