@@ -11,7 +11,8 @@
     "eslint:recommended",
     "plugin:react/jsx-runtime",
     "next",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -22,7 +23,9 @@
       "version": "detect"
     }
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
