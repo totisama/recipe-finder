@@ -13,7 +13,7 @@ export default function Letters({ changeLetter }: LetterProps) {
           key={index}
         >
           <span
-            className='text-bold cursor-pointer text-[#d57d1f]'
+            className='text-bold cursor-pointer text-[#bd690f]'
             key={letter}
             onClick={() => {
               changeLetter(letter)

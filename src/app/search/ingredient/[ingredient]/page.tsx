@@ -10,7 +10,7 @@ export default async function Area({
 
   return (
     <div className='flex flex-col items-center'>
-      <h2 className='text-bold text-3xl text-[#d57d1f]'>{ingredient}</h2>
+      <h2 className='text-bold text-3xl text-[#bd690f]'>{ingredient}</h2>
       <MealsList meals={meals} />
     </div>
   )
