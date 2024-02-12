@@ -16,7 +16,7 @@ export default function MealsList({ meals }: { meals: Meals }) {
             src={meal.strMealThumb}
             alt='Meal image'
           />
-          <span className='md:text-md mt-2 text-sm text-[#d57d1f]'>
+          <span className='md:text-md mt-2 text-sm text-[#bd690f]'>
             {meal.strMeal}
           </span>
         </Link>

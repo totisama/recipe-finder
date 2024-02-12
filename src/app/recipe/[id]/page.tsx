@@ -22,7 +22,7 @@ export default async function RecipePage({
             {meal.strMeal}
             {' - '}
             <Link
-              className='text-[#d57d1f] underline'
+              className='text-[#bd690f] underline'
               href={`/search/category/${meal.strCategory}`}
             >
               {meal.strCategory}
@@ -62,7 +62,7 @@ export default async function RecipePage({
                   className='h-32 w-32 md:h-52 md:w-52'
                   src={ingredient.image}
                 />
-                <span className='text-[#d57d1f]'>
+                <span className='text-[#bd690f]'>
                   {ingredient.measure}
                   {ingredient.name}
                 </span>
@@ -75,7 +75,7 @@ export default async function RecipePage({
         <h2 className='text-3xl font-bold text-black'>Instructions</h2>
         {meal.strYoutube !== null && meal.strYoutube !== '' ? (
           <a
-            className='text-[#d57d1f] underline'
+            className='text-[#bd690f] underline'
             href={meal.strYoutube}
             target='_blank'
           >
