@@ -13,7 +13,12 @@ export default async function Letter({
     <div className='flex flex-col items-center justify-center'>
       <Filters
         area={''}
-        shownFilters={{ area: false, letters: true, category: false }}
+        shownFilters={{
+          areas: false,
+          letters: true,
+          categories: false,
+          ingredients: false,
+        }}
       />
       <MealsList meals={meals} />
     </div>

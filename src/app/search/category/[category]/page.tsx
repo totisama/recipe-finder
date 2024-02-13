@@ -13,7 +13,12 @@ export default async function Category({
     <div className='flex flex-col'>
       <Filters
         category={category}
-        shownFilters={{ area: false, letters: false, category: true }}
+        shownFilters={{
+          areas: false,
+          letters: false,
+          categories: true,
+          ingredients: false,
+        }}
       />
       <MealsList meals={meals} />
     </div>

@@ -11,12 +11,16 @@ export default function Filters({
   shownFilters,
   area,
   category,
+  ingredient,
   letter,
+  ingredients,
 }: {
   shownFilters: ShownFiltersType
   area?: string
   category?: string
   letter?: string
+  ingredient?: string
+  ingredients: string[]
 }) {
   const router = useRouter()
 
@@ -45,8 +49,8 @@ export default function Filters({
 
   return (
     <section className='flex w-full flex-col items-center space-y-5'>
-      <div className='flex flex-col items-start justify-start gap-y-5 md:flex-row md:gap-x-10'>
-        {shownFilters.area && (
+      <div className='flex flex-col items-start justify-between gap-y-2 md:flex-row md:gap-x-10'>
+        {shownFilters.areas && (
           <Select
             value={String(area)}
             onChange={selectOnChange}
@@ -55,13 +59,22 @@ export default function Filters({
             text={'Area:'}
           />
         )}
-        {shownFilters.category && (
+        {shownFilters.categories && (
           <Select
             value={String(category)}
             onChange={selectOnChange}
             type={'category'}
             options={CATEGORIES}
             text={'Category:'}
+          />
+        )}
+        {shownFilters.ingredients && (
+          <Select
+            value={String(ingredient)}
+            onChange={selectOnChange}
+            type={'ingredient'}
+            options={ingredients}
+            text={'Ingredient:'}
           />
         )}
         {shownFilters.letters && (

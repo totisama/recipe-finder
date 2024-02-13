@@ -18,7 +18,7 @@ export default function Select({
   text,
 }: SelectProps) {
   return (
-    <div className='flex w-72 items-center gap-10 md:gap-4'>
+    <div className='flex w-full flex-col items-start justify-evenly'>
       <label
         className='text-xl text-[#bd690f]'
         htmlFor={`select-${value}`}
@@ -28,7 +28,7 @@ export default function Select({
       <select
         data-testid='select'
         id={`select-${value}`}
-        className='w-full rounded-md border-[2px] border-[#c6c4d4] bg-[#f1f0f4] px-4 py-2 md:w-auto'
+        className='w-[150px] rounded-md border-[2px] border-[#c6c4d4] bg-[#f1f0f4] px-4 py-2 md:w-auto'
         onChange={(e) => {
           onChange(e, type)
         }}
