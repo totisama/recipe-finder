@@ -18,9 +18,9 @@ export default function Select({
   text,
 }: SelectProps) {
   return (
-    <div className='flex items-center gap-4'>
+    <div className='flex w-72 items-center gap-10 md:gap-4'>
       <label
-        className='text-xl text-black'
+        className='text-xl text-[#bd690f]'
         htmlFor={`select-${value}`}
       >
         {text}
@@ -28,14 +28,14 @@ export default function Select({
       <select
         data-testid='select'
         id={`select-${value}`}
-        className='rounded-md border-[2px] border-[#c6c4d4] bg-[#f1f0f4] px-4 py-2'
+        className='w-full rounded-md border-[2px] border-[#c6c4d4] bg-[#f1f0f4] px-4 py-2 md:w-auto'
         onChange={(e) => {
           onChange(e, type)
         }}
         defaultValue={value}
       >
         <option
-          data-testid={`null`}
+          data-testid={null}
           value={''}
         >
           {' '}

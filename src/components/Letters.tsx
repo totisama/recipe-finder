@@ -9,7 +9,7 @@ export default function Letters({ changeLetter }: LetterProps) {
     <div className='hidden sm:flex'>
       {LETTERS.map((letter, index) => (
         <div
-          className='ml-1 flex gap-1 md:ml-[6px] md:gap-[6px] lg:ml-2 lg:gap-2'
+          className='ml-1 flex gap-1 text-lg md:ml-[6px] md:gap-[6px] lg:ml-2 lg:gap-2'
           key={index}
         >
           <span

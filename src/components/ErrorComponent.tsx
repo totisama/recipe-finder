@@ -15,7 +15,7 @@ export default function ErrorComponent({ error }: { error: string }) {
     <div className='mt-5 flex flex-col items-center space-y-2'>
       <h2 className='text-2xl text-white'>{formatError(String(error))}</h2>
       <button
-        className='w-[200px] rounded-md bg-[#d57d1f] py-2 text-white'
+        className='w-[200px] rounded-md bg-[#bd690f] py-2 text-white'
         onClick={() => {
           router.push('/')
         }}
