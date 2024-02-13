@@ -9,18 +9,18 @@ export default function Letters({ changeLetter }: LetterProps) {
     <div className='hidden sm:flex'>
       {LETTERS.map((letter, index) => (
         <div
-          className='ml-1 flex gap-1 text-lg md:ml-[6px] md:gap-[6px] lg:ml-2 lg:gap-2'
+          className='ml-1 flex select-none gap-1 text-lg md:ml-[6px] md:gap-[6px] lg:ml-2 lg:gap-2'
           key={index}
         >
-          <span
-            className='text-bold cursor-pointer text-[#bd690f]'
+          <button
+            className='text-bold text-[#bd690f]'
             key={letter}
             onClick={() => {
               changeLetter(letter)
             }}
           >
             {letter}
-          </span>
+          </button>
           {index < LETTERS.length - 1 && <span className='text-black'>/</span>}
         </div>
       ))}
