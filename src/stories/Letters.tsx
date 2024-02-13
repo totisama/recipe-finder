@@ -1,12 +1,12 @@
-import { LETTERS } from '@/const'
+import { LETTERS } from '../const'
 
 interface LetterProps {
   changeLetter: (letter: string) => void
 }
 
-export default function Letters({ changeLetter }: LetterProps) {
+export function Letters({ changeLetter }: LetterProps) {
   return (
-    <div className='hidden sm:flex'>
+    <div className='hidden p-5 sm:flex sm:justify-center'>
       {LETTERS.map((letter, index) => (
         <div
           className='ml-1 flex select-none gap-1 text-lg md:ml-[6px] md:gap-[6px] lg:ml-2 lg:gap-2'

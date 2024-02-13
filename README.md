@@ -67,7 +67,7 @@ Run the following command:
 npm run build-storybook
 ```
 
-If the commands succeds with any error, the build will go inside of the .storybook folder.
+If the commands succeds with any error, the build will go inside of the .storybook-static folder.
 
 ## 🔨 Technologies
 
@@ -79,7 +79,13 @@ If the commands succeds with any error, the build will go inside of the .storybo
 
 ## 🧪 Try it here:
 
-https://recipe-finder-totisama.vercel.app
+#### Web
+
+[https://recipe-finder-totisama.vercel.app](https://recipe-finder-totisama.vercel.app)
+
+#### Storybook
+
+[https://storybook-recipe-finder.vercel.app](https://storybook-recipe-finder.vercel.app)
 
 ## 🪪 License
 

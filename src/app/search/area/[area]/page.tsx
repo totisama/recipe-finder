@@ -13,7 +13,12 @@ export default async function Area({
     <div className='flex flex-col'>
       <Filters
         area={area}
-        shownFilters={{ area: true, letters: false, category: false }}
+        shownFilters={{
+          areas: true,
+          letters: false,
+          categories: false,
+          ingredients: false,
+        }}
       />
       <MealsList meals={meals} />
     </div>

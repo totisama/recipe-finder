@@ -33,7 +33,19 @@ export interface IngredientImageName {
 }
 
 export interface ShownFiltersType {
-  area: boolean
-  category: boolean
+  areas: boolean
+  categories: boolean
   letters: boolean
+  ingredients: boolean
+}
+
+export interface Ingredients {
+  meals: Ingredient[]
+}
+
+export interface Ingredient {
+  idIngredient: string
+  strIngredient: string
+  strDescription: string | null
+  strType: string | null
 }

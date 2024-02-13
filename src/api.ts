@@ -1,5 +1,5 @@
 import { API_URL_JSON } from './const'
-import { type FullRecipe, type Meals } from './types'
+import { type Ingredients, type FullRecipe, type Meals } from './types'
 
 const api = {
   getByArea: async (area: string): Promise<Meals> => {
@@ -51,6 +51,18 @@ const api = {
     }
 
     return meal.meals[0]
+  },
+  getIngredients: async (): Promise<string[]> => {
+    const res = await fetch(`${API_URL_JSON}/list.php?i=list`)
+    const json = (await res.json()) as Ingredients
+
+    if (json.meals === undefined || json.meals === null) {
+      throw new Error(`Ingredients not found`)
+    }
+
+    const ingredients = json.meals.map((ingredient) => ingredient.strIngredient)
+
+    return ingredients
   },
 }
 
