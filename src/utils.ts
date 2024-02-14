@@ -30,7 +30,7 @@ export function getMainIngredients(recipe: FullRecipe): IngredientImageName[] {
 export function formatInstructions(instructions: string) {
   const instructionsFormatted = instructions.split('.')
 
-  return instructionsFormatted
+  return instructionsFormatted.slice(0, -1)
 }
 
 export function formatIngredientName(name: string) {
