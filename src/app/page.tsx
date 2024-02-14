@@ -11,9 +11,6 @@ export default async function Home() {
   return (
     <>
       <Filters
-        area={''}
-        category={''}
-        ingredient={''}
         options={{ ingredients, areas, categories }}
         shownFilters={{
           areas: true,

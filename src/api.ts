@@ -83,7 +83,7 @@ const api = {
     return areas
   },
   getCategories: async (): Promise<string[]> => {
-    const res = await fetch(`${API_URL_JSON}/list.php?a=list`)
+    const res = await fetch(`${API_URL_JSON}/list.php?c=list`)
     const json = (await res.json()) as Categories
 
     if (json.meals === undefined || json.meals === null) {

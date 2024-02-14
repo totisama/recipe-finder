@@ -20,7 +20,7 @@ export default function Filters({
   category?: string
   letter?: string
   ingredient?: string
-  options?: SelectOptions
+  options: SelectOptions
 }) {
   const router = useRouter()
 
@@ -52,7 +52,7 @@ export default function Filters({
       <div className='flex flex-col items-start justify-between gap-y-2 md:flex-row md:gap-x-10'>
         {shownFilters.areas && (
           <Select
-            value={String(area)}
+            value={area ?? ''}
             onChange={selectOnChange}
             type={'area'}
             options={options?.areas ?? []}
@@ -61,7 +61,7 @@ export default function Filters({
         )}
         {shownFilters.categories && (
           <Select
-            value={String(category)}
+            value={category ?? ''}
             onChange={selectOnChange}
             type={'category'}
             options={options?.categories ?? []}
@@ -70,7 +70,7 @@ export default function Filters({
         )}
         {shownFilters.ingredients && (
           <Select
-            value={String(ingredient)}
+            value={ingredient ?? ''}
             onChange={selectOnChange}
             type={'ingredient'}
             options={options?.ingredients ?? []}
@@ -80,7 +80,7 @@ export default function Filters({
         {shownFilters.letters && (
           <div className='block sm:hidden'>
             <Select
-              value={String(letter)}
+              value={letter ?? ''}
               onChange={selectOnChange}
               type={'letter'}
               options={LETTERS}
