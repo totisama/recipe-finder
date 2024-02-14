@@ -40,14 +40,16 @@ export default async function RecipePage({
               className='h-[200px] w-[200px] lg:h-[500px] lg:w-[500px]'
             />
             <div className='mt-4 flex flex-wrap gap-2 md:flex-row'>
-              {meal.strTags?.split(',').map((tag) => (
-                <span
-                  className='w-fit select-none rounded-lg border-[1px] border-[#c6c4d4] bg-[#f1f0f4] px-2 py-1 text-black'
-                  key={tag}
-                >
-                  {tag}
-                </span>
-              ))}
+              {meal.strTags?.length > 0
+                ? meal.strTags.split(',').map((tag) => (
+                    <span
+                      className='w-fit select-none rounded-lg border-[1px] border-[#c6c4d4] bg-[#f1f0f4] px-2 py-1 text-[#bd690f]'
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))
+                : null}
             </div>
           </div>
           <div className='ml-10 flex w-3/5 flex-row flex-wrap justify-start gap-y-5'>
