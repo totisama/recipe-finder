@@ -12,9 +12,6 @@ export default async function Letter({
   return (
     <div className='flex flex-col items-center justify-center'>
       <Filters
-        area={''}
-        category={''}
-        ingredient={''}
         shownFilters={{
           areas: false,
           letters: true,

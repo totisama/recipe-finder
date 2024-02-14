@@ -17,7 +17,6 @@ export default async function Area({
   return (
     <div className='flex flex-col'>
       <Filters
-        category={ingredient}
         ingredient={toTitleCase(formattedIngredient)}
         options={{ ingredients }}
         shownFilters={{
