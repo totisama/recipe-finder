@@ -49,3 +49,9 @@ export interface Ingredient {
   strDescription: string | null
   strType: string | null
 }
+
+export interface SelectOptions {
+  ingredients?: string[]
+  areas?: string[]
+  categories?: string[]
+}

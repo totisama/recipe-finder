@@ -36,3 +36,9 @@ export function formatInstructions(instructions: string) {
 export function formatIngredientName(name: string) {
   return name.replace(' ', '_')
 }
+
+export function toTitleCase(str: string) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  })
+}

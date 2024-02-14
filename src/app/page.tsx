@@ -12,7 +12,7 @@ export default async function Home() {
         area={''}
         category={''}
         ingredient={''}
-        ingredients={ingredients}
+        options={{ ingredients }}
         shownFilters={{
           areas: true,
           letters: true,

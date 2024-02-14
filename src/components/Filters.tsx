@@ -4,7 +4,7 @@ import Select from './Select'
 import { useRouter } from 'next/navigation'
 import Letters from './Letters'
 import { type ChangeEvent } from 'react'
-import { type ShownFiltersType } from '@/types'
+import { type ShownFiltersType, type SelectOptions } from '@/types'
 import { AREAS, CATEGORIES, LETTERS } from '@/const'
 
 export default function Filters({
@@ -13,14 +13,14 @@ export default function Filters({
   category,
   ingredient,
   letter,
-  ingredients,
+  options,
 }: {
   shownFilters: ShownFiltersType
   area?: string
   category?: string
   letter?: string
   ingredient?: string
-  ingredients: string[]
+  options: SelectOptions
 }) {
   const router = useRouter()
 
@@ -73,7 +73,7 @@ export default function Filters({
             value={String(ingredient)}
             onChange={selectOnChange}
             type={'ingredient'}
-            options={ingredients}
+            options={options?.ingredients ?? []}
             text={'Ingredient:'}
           />
         )}
