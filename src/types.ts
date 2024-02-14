@@ -33,10 +33,10 @@ export interface IngredientImageName {
 }
 
 export interface ShownFiltersType {
-  areas: boolean
-  categories: boolean
-  letters: boolean
-  ingredients: boolean
+  areas?: boolean
+  categories?: boolean
+  letters?: boolean
+  ingredients?: boolean
 }
 
 export interface Ingredients {

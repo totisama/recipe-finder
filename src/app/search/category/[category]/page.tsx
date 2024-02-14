@@ -16,10 +16,7 @@ export default async function Category({
         category={category}
         options={{ categories }}
         shownFilters={{
-          areas: false,
-          letters: false,
           categories: true,
-          ingredients: false,
         }}
       />
       <MealsList meals={meals} />

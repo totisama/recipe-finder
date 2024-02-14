@@ -8,7 +8,12 @@ import { type ShownFiltersType, type SelectOptions } from '@/types'
 import { LETTERS } from '@/const'
 
 export default function Filters({
-  shownFilters,
+  shownFilters = {
+    areas: false,
+    letters: false,
+    categories: false,
+    ingredients: false,
+  },
   area,
   category,
   ingredient,
@@ -50,7 +55,7 @@ export default function Filters({
   return (
     <section className='flex w-full flex-col items-center space-y-5'>
       <div className='flex flex-col items-start justify-between gap-y-2 md:flex-row md:gap-x-10'>
-        {shownFilters.areas && (
+        {shownFilters.areas === true && (
           <Select
             value={area ?? ''}
             onChange={selectOnChange}
@@ -59,7 +64,7 @@ export default function Filters({
             text={'Area:'}
           />
         )}
-        {shownFilters.categories && (
+        {shownFilters.categories === true && (
           <Select
             value={category ?? ''}
             onChange={selectOnChange}
@@ -68,7 +73,7 @@ export default function Filters({
             text={'Category:'}
           />
         )}
-        {shownFilters.ingredients && (
+        {shownFilters.ingredients === true && (
           <Select
             value={ingredient ?? ''}
             onChange={selectOnChange}
@@ -77,7 +82,7 @@ export default function Filters({
             text={'Ingredient:'}
           />
         )}
-        {shownFilters.letters && (
+        {shownFilters.letters === true && (
           <div className='block sm:hidden'>
             <Select
               value={letter ?? ''}
@@ -89,7 +94,7 @@ export default function Filters({
           </div>
         )}
       </div>
-      {shownFilters.letters && <Letters changeLetter={changeLetter} />}
+      {shownFilters.letters === true && <Letters changeLetter={changeLetter} />}
     </section>
   )
 }

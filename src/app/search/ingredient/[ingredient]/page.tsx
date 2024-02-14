@@ -20,9 +20,6 @@ export default async function Area({
         ingredient={toTitleCase(formattedIngredient)}
         options={{ ingredients }}
         shownFilters={{
-          areas: false,
-          letters: false,
-          categories: false,
           ingredients: true,
         }}
       />
