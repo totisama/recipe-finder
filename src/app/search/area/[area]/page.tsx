@@ -8,11 +8,13 @@ export default async function Area({
   params: { area: string }
 }) {
   const meals = await api.getByArea(area)
+  const areas = await api.getAreas()
 
   return (
     <div className='flex flex-col'>
       <Filters
         area={area}
+        options={{ areas }}
         shownFilters={{
           areas: true,
           letters: false,

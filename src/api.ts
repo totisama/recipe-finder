@@ -1,5 +1,11 @@
 import { API_URL_JSON } from './const'
-import { type Ingredients, type FullRecipe, type Meals } from './types'
+import {
+  type Ingredients,
+  type FullRecipe,
+  type Meals,
+  type Areas,
+  type Categories,
+} from './types'
 
 const api = {
   getByArea: async (area: string): Promise<Meals> => {
@@ -63,6 +69,30 @@ const api = {
     const ingredients = json.meals.map((ingredient) => ingredient.strIngredient)
 
     return ingredients
+  },
+  getAreas: async (): Promise<string[]> => {
+    const res = await fetch(`${API_URL_JSON}/list.php?a=list`)
+    const json = (await res.json()) as Areas
+
+    if (json.meals === undefined || json.meals === null) {
+      throw new Error(`Ingredients not found`)
+    }
+
+    const areas = json.meals.map((area) => area.strArea)
+
+    return areas
+  },
+  getCategories: async (): Promise<string[]> => {
+    const res = await fetch(`${API_URL_JSON}/list.php?a=list`)
+    const json = (await res.json()) as Categories
+
+    if (json.meals === undefined || json.meals === null) {
+      throw new Error(`Ingredients not found`)
+    }
+
+    const categories = json.meals.map((category) => category.strCategory)
+
+    return categories
   },
 }
 

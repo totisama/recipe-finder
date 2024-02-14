@@ -49,3 +49,25 @@ export interface Ingredient {
   strDescription: string | null
   strType: string | null
 }
+
+export interface Areas {
+  meals: Area[]
+}
+
+export interface Area {
+  strArea: string
+}
+
+export interface Categories {
+  meals: Category[]
+}
+
+export interface Category {
+  strCategory: string
+}
+
+export interface SelectOptions {
+  ingredients?: string[]
+  areas?: string[]
+  categories?: string[]
+}

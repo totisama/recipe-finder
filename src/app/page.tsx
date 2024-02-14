@@ -5,6 +5,8 @@ import MealsList from '@/components/MealsList'
 export default async function Home() {
   const meals = await api.getByArea('American')
   const ingredients = await api.getIngredients()
+  const areas = await api.getAreas()
+  const categories = await api.getCategories()
 
   return (
     <>
@@ -12,7 +14,7 @@ export default async function Home() {
         area={''}
         category={''}
         ingredient={''}
-        ingredients={ingredients}
+        options={{ ingredients, areas, categories }}
         shownFilters={{
           areas: true,
           letters: true,
