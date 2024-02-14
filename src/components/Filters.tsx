@@ -20,7 +20,7 @@ export default function Filters({
   category?: string
   letter?: string
   ingredient?: string
-  options: SelectOptions
+  options?: SelectOptions
 }) {
   const router = useRouter()
 
