@@ -17,9 +17,6 @@ export default async function Area({
         options={{ areas }}
         shownFilters={{
           areas: true,
-          letters: false,
-          categories: false,
-          ingredients: false,
         }}
       />
       <MealsList meals={meals} />

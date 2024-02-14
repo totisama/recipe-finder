@@ -40,14 +40,16 @@ export default async function RecipePage({
               className='h-[200px] w-[200px] lg:h-[500px] lg:w-[500px]'
             />
             <div className='mt-4 flex flex-wrap gap-2 md:flex-row'>
-              {meal.strTags?.split(',').map((tag) => (
-                <span
-                  className='w-fit select-none rounded-lg border-[1px] border-[#c6c4d4] bg-[#f1f0f4] px-2 py-1 text-black'
-                  key={tag}
-                >
-                  {tag}
-                </span>
-              ))}
+              {meal.strTags?.length > 0
+                ? meal.strTags.split(',').map((tag) => (
+                    <span
+                      className='w-fit select-none rounded-lg border-[1px] border-[#c6c4d4] bg-[#f1f0f4] px-2 py-1 text-[#bd690f]'
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))
+                : null}
             </div>
           </div>
           <div className='ml-10 flex w-3/5 flex-row flex-wrap justify-start gap-y-5'>
@@ -72,7 +74,7 @@ export default async function RecipePage({
         </div>
       </div>
       <div className='mt-10 flex w-4/5 flex-col items-center'>
-        <h2 className='text-3xl font-bold text-black'>Instructions</h2>
+        <h2 className='text-4xl font-bold text-black'>Instructions</h2>
         {meal.strYoutube !== null && meal.strYoutube !== '' ? (
           <a
             className='text-[#bd690f] underline'
@@ -82,11 +84,11 @@ export default async function RecipePage({
             Video tutorial
           </a>
         ) : null}
-        <ul className='mt-5 flex flex-col items-center text-center text-black'>
+        <ul className='mt-5 flex flex-col text-black'>
           {formatInstructions(meal.strInstructions).map(
             (instruction, index) => (
               <li
-                className='mb-2 text-base'
+                className='mb-2 list-disc text-base'
                 key={index}
               >
                 {instruction}
