@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Letters from './Letters'
 import { type ChangeEvent } from 'react'
 import { type ShownFiltersType, type SelectOptions } from '@/types'
-import { AREAS, CATEGORIES, LETTERS } from '@/const'
+import { LETTERS } from '@/const'
 
 export default function Filters({
   shownFilters,
@@ -55,7 +55,7 @@ export default function Filters({
             value={String(area)}
             onChange={selectOnChange}
             type={'area'}
-            options={AREAS}
+            options={options?.areas ?? []}
             text={'Area:'}
           />
         )}
@@ -64,7 +64,7 @@ export default function Filters({
             value={String(category)}
             onChange={selectOnChange}
             type={'category'}
-            options={CATEGORIES}
+            options={options?.categories ?? []}
             text={'Category:'}
           />
         )}

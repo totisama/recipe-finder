@@ -8,11 +8,13 @@ export default async function Category({
   params: { category: string }
 }) {
   const meals = await api.getByCategory(category)
+  const categories = await api.getCategories()
 
   return (
     <div className='flex flex-col'>
       <Filters
         category={category}
+        options={{ categories }}
         shownFilters={{
           areas: false,
           letters: false,
