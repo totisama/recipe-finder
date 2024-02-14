@@ -58,23 +58,6 @@ export const AREAS = [
   'Vietnamese',
 ]
 
-export const CATEGORIES = [
-  'Beef',
-  'Breakfast',
-  'Chicken',
-  'Dessert',
-  'Goat',
-  'Lamb',
-  'Miscellaneous',
-  'Pasta',
-  'Pork',
-  'Seafood',
-  'Side',
-  'Starter',
-  'Vegan',
-  'Vegetarian',
-]
-
 export const MOCK_MEALS = {
   meals: [
     {
