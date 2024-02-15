@@ -1,6 +1,6 @@
 # Recipe Finder 🍽️
 
-This project was created for the Web and Tooling class in the Harbour.Space Master's Front-End Development program. It utilizes the [TheMealDB](https://www.themealdb.com/api.php) API to access recipes, images, and all the different information shown.
+This project was developed for the Web and Tooling class in the Harbour.Space Master's Front-End Development program. It features various filters for searching recipes and integrates the [TheMealDB](https://www.themealdb.com/api.php) API to access recipes, images, and other relevant information.
 
 ## 🧱 Getting Started
 
@@ -79,13 +79,9 @@ If the commands succeds with any error, the build will go inside of the .storybo
 
 ## 🧪 Try it here:
 
-#### Web
+##### Web [https://recipe-finder-totisama.vercel.app](https://recipe-finder-totisama.vercel.app)
 
-[https://recipe-finder-totisama.vercel.app](https://recipe-finder-totisama.vercel.app)
-
-#### Storybook
-
-[https://storybook-recipe-finder.vercel.app](https://storybook-recipe-finder.vercel.app)
+##### Storybook [https://storybook-recipe-finder.vercel.app](https://storybook-recipe-finder.vercel.app)
 
 ## 🪪 License
 
