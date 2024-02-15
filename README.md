@@ -77,7 +77,7 @@ If the commands succeds with any error, the build will go inside of the .storybo
 - Jest
 - Storybook
 
-## 🧪 Try it here:
+## 🧪 Try it here
 
 ##### Web [https://recipe-finder-totisama.vercel.app](https://recipe-finder-totisama.vercel.app)
 
