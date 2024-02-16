@@ -1,4 +1,5 @@
 # Recipe Finder 🍽️
+<img width="1512" alt="Screenshot 2024-02-16 at 9 15 18 AM" src="https://github.com/totisama/recipe-finder/assets/32148906/82164262-8e65-4467-a7cf-3d36faa704d7">
 
 This project was developed for the Web and Tooling class in the Harbour.Space Master's Front-End Development program. It features various filters for searching recipes and integrates the [TheMealDB](https://www.themealdb.com/api.php) API to access recipes, images, and other relevant information.
 
