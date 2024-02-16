@@ -17,7 +17,7 @@ export default async function RecipePage({
   return (
     <section className='mt-5 flex flex-col items-center gap-y-5 p-5'>
       <div className='flex flex-col lg:flex-row'>
-        <div className='flex w-full flex-col gap-y-1 lg:w-2/5'>
+        <div className='flex w-full flex-col items-center gap-y-1 md:items-start lg:w-2/5'>
           <h2 className='text-3xl font-bold text-black'>
             {meal.strMeal}
             {' - '}
@@ -32,7 +32,7 @@ export default async function RecipePage({
             <img
               alt={meal.strMeal}
               src={meal.strMealThumb}
-              className='h-[380px] w-[380px] md:h-[420px] md:w-[420px]'
+              className='h-[380px] w-[380px] object-cover md:h-[420px] md:w-[420px]'
             />
             <div className='mt-2 flex flex-wrap gap-2 md:flex-row'>
               {meal.strTags?.length > 0
